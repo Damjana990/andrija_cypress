@@ -1,21 +1,28 @@
+const locators = require("../fixtures/locators.json")
+
 describe("Login test", () => {
 
-    it('Visit gallery page', () => {
-        cy.visit('/')
-        cy.wait(10000)
+    beforeEach (() => {
+        cy.visit ('/')
+        cy.get("a[href='/login']").click()
     })
-    it ('Click on login button', () => {
-        cy.get('.nav-link').eq(1).click()
-    })
+
+    //it('Visit gallery page', () => {
+      //  cy.visit('/')
+        //cy.wait(10000)
+    //})
+    //it ('Click on login button', () => {
+    //    cy.get('.nav-link').eq(1).click()
+    //})
     
     it ('Click on login button 2', () => {
         cy.get("a[href='/login']").click()
     })
 
     it ('Login with valid credential', () => {
-        cy.get('#email').type('test1234end@test.com')
-        cy.get('#password').type('12345678')
-        cy.get('button').click()
+        cy.get(locators.login.email).type('test1234end@test.com')
+        cy.get(locators.login.password).type('12345678')
+        cy.get(locators.login.submit).click()
     })
 
     it ('Logout', () => {

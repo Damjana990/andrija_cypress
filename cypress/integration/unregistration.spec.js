@@ -10,6 +10,7 @@ describe ("Registration test", () => {
 
     it ('Registration with invalid credential', () => {
         cy.get('#first-name').type('Test')
+        //cy.get('#last-name').type('')
         cy.get('#email').type('test12345end@test.com')
         cy.get('#password').type('12345678')
         cy.get('#password-confirmation').type('12345678')
