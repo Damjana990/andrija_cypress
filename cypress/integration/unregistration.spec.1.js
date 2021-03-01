@@ -2,6 +2,7 @@
 const locators = require("../fixtures/locators.json")
 //const faker = require('faker')
 const data = require("../fixtures/data.json")
+const error = require("../fixtures/error.json")
 
 describe ("Registration test", () => {
 
@@ -13,14 +14,14 @@ describe ("Registration test", () => {
       //  randomPassword: faker.internet.password()
     // }
 
-    beforeEach (() => {
+    before (() => {
         cy.visit ('/')
         cy.get('.nav-link').eq(2).click()
     })
 
-    it('Visit gallery page', () => {
-       cy.visit('/')
-    })
+    // it('Visit gallery page', () => {
+    //    cy.visit('/')
+    // })
 
     it ('Click on register button', () => {
        cy.get('.nav-link').eq(2).click()
@@ -31,12 +32,14 @@ describe ("Registration test", () => {
         cy.get(locators.register.lastName).clear().type(data.loginRegister.lastName)
         cy.get(locators.register.email).clear().type(data.loginRegister.email)
         cy.get(locators.register.password).clear().type(data.loginRegister.password)
-        cy.get(locators.register.password_conf).clear().type(data.loginRegister.password_conf)
-        cy.get(locators.register.checkbox_conf).check()   
+        cy.get(locators.register.password_conf).clear().type(data.loginRegister.inc_pass)
+        cy.get(locators.register.checkbox_conf).check()
+        cy.get(locators.register.button_conf).click()
+        cy.get(error.createGallery.passwordMissmatch).should("contain", error.error.errorMsg)   
     })
 
     it('Click on submit button', () => {
-        cy.get(locators.register.button_conf).click() 
+         
     })
 
 })

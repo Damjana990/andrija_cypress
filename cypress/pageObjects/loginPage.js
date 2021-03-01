@@ -32,7 +32,8 @@ class LoginPage {
     visitLogin() {
         this.navigationLogin.click()
     }
-
+    
+    //optimizovana funkcija za login
     login(email,password) {
         this.emailInput.type(email)
         this.passwordInput.type(password)

@@ -26,5 +26,11 @@
         "description" : "#description",
         "image" : "input[type='url']",
         "submit_butt": "form > button:nth-of-type(1)"
+    },
+
+    "all_galleries_filter": {
+        "all_filter":".input-group.mb-3 > .form-control",
+        "filter_button": ".input-group-append > .btn.btn-outline-secondary.input-button",
+        "load_more":".btn.btn-custom"
     }
 }

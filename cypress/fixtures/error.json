@@ -1,0 +1,25 @@
+{
+    "createGallery": {
+        "passwordMissmatch": ".alert"
+    },
+
+    "error": {
+        "errorMsg": "The password confirmation does not match."
+    },
+
+    "errorTitle": {
+        "errorTitle": ".alert"
+    },
+
+    "errorTitMsgLessTwo": {
+        "errorMsg": "The title must be at least 2 characters."
+    },
+
+    "errorTitleMsgMore": {
+        "errorMsg": "The title may not be greater than 255 characters."
+    }, 
+
+    "filterError": {
+        "filterError": ".input-group.mb-3 > .form-control"
+    }
+}
