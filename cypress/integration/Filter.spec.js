@@ -13,9 +13,16 @@ describe ('Create Gallery test', () => {
     //     cy.get(locators.login.submit).click()
     // })
 
-    it ('Filter all Find with specific characters', () => {
-        cy.get(locators.all_galleries_filter.all_filter).type('Pics')
-        cy.get(locators.all_galleries_filter.filter_button).click()
-        cy.get(error.filterError.filterError).should("contain", "pics")
+    it("Filter field, searching for existent gallery", () => {
+        cy.get(locators.allGalleries.inputField).type("Image555")
+        cy.get(locators.allGalleries.filterButton).click()
+        cy.get("h2 > .box-title").should("contain", "Image555")
     })
-})
+    
+    it.only("Filter field, matching with 2 galleries", () => {
+        cy.get(locators.allGalleries.inputField).type("5 Slika")
+        cy.get(locators.allGalleries.filterButton).click()
+        cy.get(".grid").should(($p) => {
+    expect($p).to.have.length(2)
+    expect($p.first()).to.contain('5 Slika')
+  })

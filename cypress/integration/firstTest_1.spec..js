@@ -1,5 +1,8 @@
 //const locators = require("../fixtures/locators.json")
-import {loginPage} from '../pageObjects/loginPage.js'
+//import {loginPage} from '../pageObjects/loginPage.js'
+
+const data = require("../fixtures/data.json")
+
 
 describe("Login test", () => {
 

@@ -2,7 +2,7 @@
     "loginRegister": {
         "firstName": "Test",
         "lastName": "Test",
-        "email": "test1234end@test.com",
+        "email": "test1234edit4@test.com",
         "password": "12345678",
         "password_conf":"12345678",
         "inc_pass": "asdasd",
